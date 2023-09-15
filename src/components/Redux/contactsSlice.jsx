@@ -13,36 +13,20 @@ export const contactsSlice = createSlice({
     initialState: contactsInitialState,
      // Объект редюсеров
     reducers: {
-        addContacts: {
-            reducer(state, action) {
-                state.push(action.payload)
-            }, 
-            prepare(text) {
-                return {
-                    payload: {
-                        text,
-                        id: nanoid(),
-                        completed: false,
-                    }
-                }
-            }
+        addContacts: (state, action) => {
+           state.contacts.push({
+            id: nanoid(),
+            name: action.payload.name,
+            number: action.payload.number,
+           })
         },
-      
+           
 
         deleteContacts: (state, action) => {
-           const deleteContactsById =  state.findIndex(contacts => contacts.id === action.payload);
-           state.splice(deleteContactsById, 1)
+            state.contacts = state.contacts.filter(contacts => contacts.id !== action.payload);
         },  
-
-        toggleCompleted(state, action) {
-            for (const contacts of state) {
-              if (contacts.id === action.payload) {
-                contacts.completed = !contacts.completed;
-                break;
-              }
-            }
-          },
     }
+    
 })
 
 // Генераторы экшенов

@@ -12,6 +12,7 @@ font-size: 24px;
 
 color: rgb(142, 13, 138);
 text-decoration: underline;
+margin-bottom: 20px;
 `;
 
 export const FormStyle = styled(Form)`

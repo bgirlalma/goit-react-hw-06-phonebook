@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 export const Container = styled.div`
 width: 100%;
-
 `;
 
 export const StyledTitle = styled.h2`
@@ -10,7 +9,7 @@ justify-content: center;
 font-family: Oxygen;
 font-weight: bold;
 font-size: 24px;
-margin-bottom: 5px;
+margin-bottom: 20px;
 color: rgb(142, 13, 138);
 text-decoration: underline;
 `;

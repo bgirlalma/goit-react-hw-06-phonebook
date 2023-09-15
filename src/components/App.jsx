@@ -1,4 +1,4 @@
-// import { GlobalStyled } from "./globalStyled";
+import { GlobalStyled } from "./globalStyled";
 import { InputPhonebook } from "./InputPhonebook/inputPhonebook";
 import { FilterContacts } from './FilterContacts/filterContacts'
 import { BookContacts } from "./BookContacts/bookContacts";
@@ -24,7 +24,7 @@ export const App = () => {
     <BookContacts title="Contacts"/>
     </WrapperContainer>
     <FilterContacts />
-    {/* <GlobalStyled/> */}
+    <GlobalStyled/>
         </Container>
   );
 };

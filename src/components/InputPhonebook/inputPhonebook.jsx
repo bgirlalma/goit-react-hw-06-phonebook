@@ -3,6 +3,7 @@ import { addContacts } from "components/Redux/contactsSlice";
 import { Formik, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { nanoid } from 'nanoid'
+import Notiflix from 'notiflix';
 import {Container, FormStyle, FieldStyle, SubmitStyled, LabelStaled, PhoneTitle} from './inputPhonebook.styled'
 
 const SignupSchema = Yup.object().shape({
@@ -36,6 +37,8 @@ const SignupSchema = Yup.object().shape({
           number: values.number,
       }))
       actions.resetForm()
+
+      Notiflix.Notify.success('Контакт успешно добавлен в список!');
   
        }}
       >

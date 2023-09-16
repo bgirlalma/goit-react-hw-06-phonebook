@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { nanoid } from 'nanoid'
+import initialContactsState from '../contacts.json'
 
 // начальное состояние 
 const  contactsInitialState = {
-    contacts: []
-}
+    contacts: initialContactsState,
+};
 
 export const contactsSlice = createSlice({
     // Имя слайса
@@ -14,12 +15,12 @@ export const contactsSlice = createSlice({
      // Объект редюсеров
     reducers: {
         addContacts: (state, action) => {
-           state.contacts.push({
-            id: nanoid(),
-            name: action.payload.name,
-            number: action.payload.number,
-           })
-        },
+            state.contacts.push({
+             id: nanoid(),
+             name: action.payload.name,
+             number: action.payload.number,
+            })
+         },
            
 
         deleteContacts: (state, action) => {
@@ -30,6 +31,6 @@ export const contactsSlice = createSlice({
 })
 
 // Генераторы экшенов
-export const { addContacts, deleteContacts, toggleCompleted } = contactsSlice.actions;
+export const { addContacts, deleteContacts} = contactsSlice.actions;
 // Редюсер слайса
-export const contactsReduce = contactsSlice.reducer;
+export const contactsReducer = contactsSlice.reducer;
